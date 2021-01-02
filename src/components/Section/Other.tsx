@@ -1,4 +1,4 @@
-import { Url } from "@bit/ivanstan.react.url";
+import { Url } from "../../bit/url";
 
 export function Other() {
   return (

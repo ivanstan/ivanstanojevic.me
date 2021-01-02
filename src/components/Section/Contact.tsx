@@ -1,4 +1,4 @@
-import { Url } from "@bit/ivanstan.react.url";
+import { Url } from "../../bit/url";
 
 export function Contact() {
   return (
@@ -10,25 +10,25 @@ export function Contact() {
             <div className="col-md-6">
               <ul className="contact">
                 <li>
-                  <Url className="contact-item" external={true}
+                  <Url external={true}
                        href="mailto:ivanstan@gmail.com">
                     <i className="fa fa-envelope" aria-hidden="true"/> ivanstan@gmail.com
                   </Url>
                 </li>
                 <li>
-                  <Url className="contact-item" external={true}
+                  <Url external={true}
                        href="//www.linkedin.com/in/ivan-stanojevic-1405988">
                     <i className="fab fa-linkedin" aria-hidden="true"/> LinkedIn
                   </Url>
                 </li>
                 <li>
-                  <Url className="contact-item" external={true}
+                  <Url external={true}
                        href="//github.com/ivanstan">
                     <i className="fab fa-github"/> GitHub
                   </Url>
                 </li>
                 <li>
-                  <Url className="contact-item" external={true}
+                  <Url external={true}
                        href="skype:ivanstan88?call">
                     <i className="fab fa-skype" aria-hidden="true"/> ivanstan88
                   </Url>

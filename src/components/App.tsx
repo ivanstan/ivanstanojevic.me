@@ -7,16 +7,16 @@ import { Projects } from "./Section/Projects";
 import { Other } from "./Section/Other";
 
 function App() {
-    return (
-        <>
-            <NavBar/>
-            <Intro/>
-            <About/>
-            <Projects/>
-            <Other/>
-            <Contact/>
-        </>
-    );
+  return (
+    <>
+      <NavBar/>
+      <Intro/>
+      <About/>
+      <Projects/>
+      <Other/>
+      <Contact/>
+    </>
+  );
 }
 
 export default App;

@@ -19,7 +19,8 @@
     "react-slick": "^0.27.13",
     "slick-carousel": "^1.8.1",
     "typescript": "^4.0.3",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "@bit/ivanstan.react.url": "file:./src/bit/url"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,5 +45,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "bit": {
+    "env": {},
+    "componentsDefaultDirectory": "src/bit/{name}",
+    "packageManager": "yarn"
   }
 }

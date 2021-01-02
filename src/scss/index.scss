@@ -60,6 +60,7 @@ section .container {
   background: #fff;
 }
 
+.contact-item:visited,
 .contact-item {
   color: #fff;
 }
@@ -348,6 +349,13 @@ aside#nav-aside .nav-item {
     display: none;
   }
 }
+
+.contact {
+  a {
+    color: #fff;
+  }
+}
+
 @include media-breakpoint-up(lg) {
 
 }

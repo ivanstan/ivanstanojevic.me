@@ -5,6 +5,7 @@ artifact-*.tar.gz
 /node_modules
 /.pnp
 .pnp.js
+src/bit/*
 
 # testing
 /coverage

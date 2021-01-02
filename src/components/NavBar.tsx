@@ -1,4 +1,5 @@
 import React from "react";
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 export class NavBar extends React.Component<any, any> {
   render() {
@@ -8,23 +9,23 @@ export class NavBar extends React.Component<any, any> {
           <div className="col-xl-5 offset-xl-2 col-md-9 col-8">
               <ul className="nav nav-pills main-menu">
                 <li className="nav-item aside-toggle">
-                  <a className="nav-link" href="#" id="nav-aside-toggle"><i
-                    className="fas fa-bars"/></a>
+                  <AnchorLink className="nav-link" href="#" id="nav-aside-toggle"><i
+                    className="fas fa-bars"/></AnchorLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" href="#intro">Intro</a>
+                  <AnchorLink className="nav-link active" href="#intro">Intro</AnchorLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#about">About</a>
+                  <AnchorLink className="nav-link" href="#about">About</AnchorLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#projects">Projects</a>
+                  <AnchorLink className="nav-link" href="#projects">Projects</AnchorLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#other">Other</a>
+                  <AnchorLink className="nav-link" href="#other">Other</AnchorLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#contact">Contact</a>
+                  <AnchorLink className="nav-link" href="#contact">Contact</AnchorLink>
                 </li>
               </ul>
             <aside id="nav-aside" className="p-3" style={{ top: 88 }}>

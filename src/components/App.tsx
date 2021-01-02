@@ -10,11 +10,14 @@ function App() {
   return (
     <>
       <NavBar/>
-      <Intro/>
-      <About/>
-      <Projects/>
-      <Other/>
-      <Contact/>
+      <div style={{scrollSnapType: "y mandatory"}}>
+        <Intro/>
+        <About/>
+        <Projects/>
+        <Other/>
+        <Contact/>
+      </div>
+
     </>
   );
 }

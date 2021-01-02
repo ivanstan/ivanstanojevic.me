@@ -45,6 +45,7 @@ p a {
 section {
   height: 100vh;
   overflow: hidden;
+  scroll-snap-align: start;
 }
 
 section .container {

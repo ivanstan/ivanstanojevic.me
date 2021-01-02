@@ -1,5 +1,6 @@
 import React from "react";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import ScrollspyNav from "react-scrollspy-nav";
 
 export class NavBar extends React.Component<any, any> {
   render() {
@@ -7,6 +8,13 @@ export class NavBar extends React.Component<any, any> {
       <div className="container">
         <div className="row flex-grow-1">
           <div className="col-xl-5 offset-xl-2 col-md-9 col-8">
+
+            <ScrollspyNav
+              scrollTargetIds={["intro", "about", "projects", "other", "contact"]}
+              activeNavClass="active"
+              scrollDuration="1000"
+              offset={-1}
+            >
               <ul className="nav nav-pills main-menu">
                 <li className="nav-item aside-toggle">
                   <AnchorLink className="nav-link" href="#" id="nav-aside-toggle"><i
@@ -28,6 +36,7 @@ export class NavBar extends React.Component<any, any> {
                   <AnchorLink className="nav-link" href="#contact">Contact</AnchorLink>
                 </li>
               </ul>
+            </ScrollspyNav>
             <aside id="nav-aside" className="p-3" style={{ top: 88 }}>
               <a href="#" id="nav-aside-close"/>
               <ul className="nav nav-pills main-menu">

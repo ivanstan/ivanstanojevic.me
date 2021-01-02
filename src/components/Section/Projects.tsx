@@ -60,20 +60,20 @@ export function Projects() {
             </div>
           </div>
 
-          <div className="media mt-1">
-            <div className="media-body">
-              <h3 className="media-heading">
-                <Url href="https://play.google.com/store/apps/details?id=com.ivanstan.glutenfree"
-                     external={true}> GlutenFree</Url>
-              </h3>
-              GlutenFree contains a list of gluten-free products, their details and descriptions, making
-              life
-              easier
-              for people suffering from gluten intolerance or those who simply want to eat healthy and
-              follow the
-              latest nutrition trends.
-            </div>
-          </div>
+          {/*<div className="media mt-1">*/}
+          {/*  <div className="media-body">*/}
+          {/*    <h3 className="media-heading">*/}
+          {/*      <Url href="https://play.google.com/store/apps/details?id=com.ivanstan.glutenfree"*/}
+          {/*           external={true}> GlutenFree</Url>*/}
+          {/*    </h3>*/}
+          {/*    GlutenFree contains a list of gluten-free products, their details and descriptions, making*/}
+          {/*    life*/}
+          {/*    easier*/}
+          {/*    for people suffering from gluten intolerance or those who simply want to eat healthy and*/}
+          {/*    follow the*/}
+          {/*    latest nutrition trends.*/}
+          {/*  </div>*/}
+          {/*</div>*/}
         </div>
       </div>
     </section>

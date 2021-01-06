@@ -1,6 +1,6 @@
 import React from "react";
 
-interface UrlPropsInterface {
+interface UrlPropsInterface extends React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
   href?: string;
   external?: boolean;
 }

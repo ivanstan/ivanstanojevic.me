@@ -1,4 +1,4 @@
-import { Url } from "../../bit/url";
+import { Url } from "../Url";
 
 export function Projects() {
   return (

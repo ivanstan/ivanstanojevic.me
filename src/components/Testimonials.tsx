@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import { Url } from "../bit/url";
+import { Url } from "./Url";
 
 const listStyle = { float: 'left', listStyle: 'none', position: 'relative', width: 1110 } as any;
 

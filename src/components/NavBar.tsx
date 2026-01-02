@@ -1,65 +1,66 @@
-import React from "react";
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-import ScrollspyNav from "react-scrollspy-nav";
+import { useState, useEffect, useCallback } from "react";
 
-export class NavBar extends React.Component<any, any> {
-  render() {
-    return <nav className="navbar fixed-top py-4" id="nav-main">
+const navItems = [
+  { id: "hero", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "project", label: "Project" },
+  { id: "contact", label: "Contact" }
+];
+
+export function NavBar() {
+  const [activeSection, setActiveSection] = useState("hero");
+
+  const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    navItems.forEach(({ id }) => {
+      const element = document.getElementById(id);
+      if (element) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                setActiveSection(id);
+              }
+            });
+          },
+          { threshold: 0.3 }
+        );
+        observer.observe(element);
+        observers.push(observer);
+      }
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
+
+  return (
+    <nav className="navbar">
       <div className="container">
-        <div className="row flex-grow-1">
-          <div className="col-xl-5 offset-xl-2 col-md-9 col-8">
-
-            <ScrollspyNav
-              scrollTargetIds={["intro", "about", "projects", "other", "contact"]}
-              activeNavClass="active"
-              scrollDuration="1000"
-              offset={-1}
-            >
-              <ul className="nav nav-pills main-menu">
-                <li className="nav-item aside-toggle">
-                  <AnchorLink className="nav-link" href="#" id="nav-aside-toggle"><i
-                    className="fas fa-bars"/></AnchorLink>
-                </li>
-                <li className="nav-item">
-                  <AnchorLink className="nav-link active" href="#intro">Intro</AnchorLink>
-                </li>
-                <li className="nav-item">
-                  <AnchorLink className="nav-link" href="#about">About</AnchorLink>
-                </li>
-                <li className="nav-item">
-                  <AnchorLink className="nav-link" href="#projects">Projects</AnchorLink>
-                </li>
-                <li className="nav-item">
-                  <AnchorLink className="nav-link" href="#other">Other</AnchorLink>
-                </li>
-                <li className="nav-item">
-                  <AnchorLink className="nav-link" href="#contact">Contact</AnchorLink>
-                </li>
-              </ul>
-            </ScrollspyNav>
-            <aside id="nav-aside" className="p-3" style={{ top: 88 }}>
-              <a href="#" id="nav-aside-close"/>
-              <ul className="nav nav-pills main-menu">
-                <li className="nav-item">
-                  <a className="nav-link" href="https://ivanstanojevic.me/#intro">Intro</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="https://ivanstanojevic.me/#about">About</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="https://ivanstanojevic.me/#projects">Projects</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="https://ivanstanojevic.me/#other">Other</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="https://ivanstanojevic.me/#contact">Contact</a>
-                </li>
-              </ul>
-            </aside>
-          </div>
-        </div>
+        <ul className="nav-menu">
+          {navItems.map(({ id, label }) => (
+            <li key={id}>
+              <a
+                className={`nav-link ${activeSection === id ? "active" : ""}`}
+                href={`#${id}`}
+                onClick={(e) => scrollToSection(e, id)}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
-    </nav>;
-  }
+    </nav>
+  );
 }

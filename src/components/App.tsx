@@ -1,23 +1,27 @@
-import React from 'react';
 import { NavBar } from "./NavBar";
-import { Contact } from "./Section/Contact";
-import { About } from "./Section/About";
-import { Intro } from "./Section/Intro"
-import { Projects } from "./Section/Projects";
-import { Other } from "./Section/Other";
+import { Hero } from "./sections/Hero";
+import { About } from "./sections/About";
+import { Project } from "./sections/Project";
+import { Recognition } from "./sections/Recognition";
+import { Contact } from "./sections/Contact";
 
 function App() {
   return (
     <>
-      <NavBar/>
-      <div style={{scrollSnapType: "y mandatory"}}>
-        <Intro/>
-        <About/>
-        <Projects/>
-        <Other/>
-        <Contact/>
-      </div>
-
+      <div className="bg-pattern" />
+      <NavBar />
+      <main>
+        <Hero />
+        <About />
+        <Project />
+        <Recognition />
+        <Contact />
+      </main>
+      <footer className="footer">
+        <div className="container">
+          <p>© 2026 Ivan Stanojević. Built with React.</p>
+        </div>
+      </footer>
     </>
   );
 }

@@ -11,7 +11,7 @@ echo "yarn build"
 yarn build
 
 echo "create artifact"
-tar -czf "${ARTIFACT_NAME}" -C build .
+tar -czf "${ARTIFACT_NAME}" -C dist .
 
 echo "upload artifact"
 scp -r -P ${PORT} "${ARTIFACT_NAME}" ${USER}@${HOST}:/${DEPLOY_PATH}/
